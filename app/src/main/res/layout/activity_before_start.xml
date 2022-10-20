@@ -6,25 +6,60 @@
     <data>
         <variable
             name="viewModel"
-            type="com.chunb.coopangeats_clone.src.beforestart.viewmodel.BeforeStartViewModel" />
+            type="com.chunb.coopangeats.src.beforestart.viewmodel.BeforeStartViewModel" />
+
+        <variable
+            name="activity"
+            type="com.chunb.coopangeats.src.beforestart.BeforeStartActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/beforeStart_Vp_Pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
             app:layout_constraintTop_toTopOf="parent"
-            setAdapterWithIntList="@{viewModel.imageList}"/>
+            app:layout_constraintBottom_toTopOf="@id/beforeStart_btn_start" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/beforeStart_tab_Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tabGravity="center"
+            app:tabIndicator="@null"
+            app:tabBackground="@drawable/item_bg_tab_indicator"
+            android:background="@android:color/transparent"
+            setTabWithViewPager="@{activity.viewPager()}"
+            setViewPagerList="@{viewModel.imageList}"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@id/beforeStart_btn_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/beforeStart_btn_start"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/color_00bdff"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:onClick="@{() -> activity.onClickStartBtn()}"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BeforeStart_start"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

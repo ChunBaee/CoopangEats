@@ -1,9 +1,9 @@
-package com.chunb.coopangeats_clone.src.beforestart.model
+package com.chunb.coopangeats.src.beforestart.model
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import androidx.core.content.res.ResourcesCompat
-import com.chunb.coopangeats_clone.R
+import com.chunb.coopangeats.R
+
 
 class BeforeStartRepository (context: Context) {
     private val mContext = context

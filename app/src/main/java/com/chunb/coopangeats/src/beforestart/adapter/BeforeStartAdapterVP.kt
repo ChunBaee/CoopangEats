@@ -1,10 +1,10 @@
-package com.chunb.coopangeats_clone.src.beforestart.adapter
+package com.chunb.coopangeats.src.beforestart.adapter
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.chunb.coopangeats_clone.databinding.ItemVpBeforeStartBinding
+import com.chunb.coopangeats.databinding.ItemVpBeforeStartBinding
 
 class BeforeStartAdapterVP(itemList : MutableList<Drawable>) : RecyclerView.Adapter<BeforeStartAdapterVP.BeforeStartViewHolder>() {
     var mItemList = itemList

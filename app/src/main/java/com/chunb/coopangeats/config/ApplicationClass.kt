@@ -1,4 +1,4 @@
-package com.chunb.coopangeats_clone.config
+package com.chunb.coopangeats.config
 
 import android.app.Application
 import android.content.SharedPreferences

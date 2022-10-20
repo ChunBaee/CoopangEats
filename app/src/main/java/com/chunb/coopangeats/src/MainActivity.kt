@@ -1,8 +1,8 @@
-package com.chunb.coopangeats_clone.src
+package com.chunb.coopangeats.src
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.chunb.coopangeats_clone.R
+import com.chunb.coopangeats.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
