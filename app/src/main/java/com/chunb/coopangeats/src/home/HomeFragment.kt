@@ -1,20 +1,28 @@
 package com.chunb.coopangeats.src.home
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.chunb.coopangeats.databinding.FragmentHomeBinding
 import com.chunb.coopangeats.src.MainViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -31,35 +39,26 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
+        binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         getLocationPermission()
-        getUserLocation()
 
         return binding.root
     }
 
     private fun getLocationPermission() {
-        if (checkHasPermission().not()) {
-            //ActivityCompat.requestPermissions(requireActivity(), PERM_LIST, 1)
+        if (!checkHasPermission()) {
             requestPermissions.launch(PERM_LIST)
         } else {
             viewModel.getUserLocation()
-            Log.d("----", "getLocationPermission: ACCESSED")
-        }
-    }
-
-    private fun getUserLocation() {
-        viewModel.longitude.observe(requireActivity()) {
-            Log.d("----", "getUserLocation: $it, ${viewModel.latitude.value}")
         }
     }
 
     private fun checkHasPermission(): Boolean {
         var result = false
         for (i in PERM_LIST) {
-            result = if (isPermissionGranted(i)) true else return false
+            result = isPermissionGranted(i)
         }
         return result
     }
@@ -72,10 +71,24 @@ class HomeFragment : Fragment() {
         ActivityResultContracts.RequestMultiplePermissions()
     ) {
         if (checkHasPermission()) {
-            Log.d("----", "ACCESS: ACCESS")
             viewModel.getUserLocation()
+        } else {
+            showPermissionDialog()
         }
-        else Log.d("----", "it : FINALLY DENIED")
+    }
+
+    private fun showPermissionDialog() {
+        val builder =
+            AlertDialog.Builder(requireContext()).setMessage("위치 서비스를 사용하시려면\n접근권한을 허용해 주세요.")
+        builder.setPositiveButton("설정") { _, _ ->
+            val intent =
+                Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(Uri.parse("package:${requireContext().packageName}"))
+            startActivity(intent)
+        }
+        builder.setNegativeButton("취소") { _, _ ->
+            Log.d("----", "it : FINALLY DENIED")
+        }
+        builder.create().show()
     }
 
 }

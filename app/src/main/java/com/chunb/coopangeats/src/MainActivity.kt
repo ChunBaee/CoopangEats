@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel by viewModels<MainViewModel>()
 
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,7 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         setBottomNav()
     }
-
 
     private fun setBottomNav() {
         //시작시 보여질 Fragment 설정
