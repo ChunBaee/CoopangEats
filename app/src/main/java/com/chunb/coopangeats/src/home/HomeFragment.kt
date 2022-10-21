@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
+        binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         getLocationPermission()

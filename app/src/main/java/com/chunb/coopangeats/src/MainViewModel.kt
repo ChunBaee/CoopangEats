@@ -16,12 +16,17 @@ class MainViewModel (application: Application) : AndroidViewModel(application) {
     private val _longitude = MutableLiveData<Double>()
     val longitude : LiveData<Double> = _longitude
 
+    private val _userLocationName = MutableLiveData<String>("주소 입력하기")
+    val userLocationName : LiveData<String> = _userLocationName
+
 
     fun getUserLocation() {
+        //유저 현재 좌표 가져오기
         val location : Task<Location> = repo.returnUserLocation()
         location.addOnSuccessListener {
             _latitude.value = it.latitude
             _longitude.value = it.longitude
+            _userLocationName.value = repo.returnUserAddress(it.latitude, it.longitude)
         }.addOnFailureListener {
             throw it
         }
