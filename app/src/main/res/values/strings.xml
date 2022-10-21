@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">CoopangEats</string>
 
+    <!-- BottomNav -->
+    <string name="BottomNav_Home">홈</string>
+    <string name="BottomNav_Search">검색</string>
+    <string name="BottomNav_Zzim">즐겨찾기</string>
+    <string name="BottomNav_OrderList">주문내역</string>
+    <string name="BottomNav_MyEats">My이츠</string>
+
     <!-- BeforeStart -->
 
     <string name="BeforeStart_start">시작하기</string>
+
+
+    <!-- HomeFragment -->
+    <string name="HomeFragment_input_Location">주소 입력하기</string>
 
 </resources>

@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_main_btm_nav_home"
+        android:icon="@drawable/selector_main_bottom_home"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="@string/BottomNav_Home" />
+    <item
+        android:id="@+id/menu_main_btm_nav_search"
+        android:icon="@drawable/selector_main_bottom_search"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="@string/BottomNav_Search" />
+    <item
+        android:id="@+id/menu_main_btm_nav_zzim"
+        android:icon="@drawable/selector_main_bottom_zzim"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="@string/BottomNav_Zzim" />
+    <item
+        android:id="@+id/menu_main_btm_nav_order_list"
+        android:icon="@drawable/selector_main_bottom_order_llist"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="@string/BottomNav_OrderList" />
+    <item
+        android:id="@+id/menu_main_btm_nav_my_eats"
+        android:icon="@drawable/selector_main_bottom_my_eats"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="@string/BottomNav_MyEats" />
 </menu>

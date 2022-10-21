@@ -4,10 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/item_bg_tab_indicator.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/main_bottom_color.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/selector_main_bottom_home.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/selector_main_bottom_my_eats.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/selector_main_bottom_order_llist.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/selector_main_bottom_search.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/selector_main_bottom_zzim.xml" value="0.184" />
         <entry key="app/src/main/res/layout/activity_before_start.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2916666666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/item_vp_before_start.xml" value="0.2916666666666667" />
+        <entry key="app/src/main/res/menu/menu_main_bottom.xml" value="0.3958333333333333" />
       </map>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
