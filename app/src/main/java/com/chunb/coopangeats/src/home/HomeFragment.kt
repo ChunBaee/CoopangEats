@@ -17,8 +17,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.chunb.coopangeats.R
 import com.chunb.coopangeats.databinding.FragmentHomeBinding
 import com.chunb.coopangeats.src.MainViewModel
+import com.chunb.coopangeats.src.home.homewol.HomeFragmentWOL
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
@@ -73,6 +75,7 @@ class HomeFragment : Fragment() {
         if (checkHasPermission()) {
             viewModel.getUserLocation()
         } else {
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fg_home_layout_container, HomeFragmentWOL()).commit()
             showPermissionDialog()
         }
     }

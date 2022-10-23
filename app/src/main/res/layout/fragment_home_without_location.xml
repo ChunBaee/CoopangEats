@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.chunb.coopangeats.src.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fg_home_wol_tv_title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/HomeFragmentWOL_header_txt_1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fg_home_wol_tv_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/HomeFragmentWOL_header_txt_2"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@id/fg_home_wol_tv_title1"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wol_tv_title1" />
+
+        <TextView
+            android:id="@+id/fg_home_wol_tv_title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/HomeFragmentWOL_header_txt_3"
+            android:textColor="@color/color_969ba2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/fg_home_wol_tv_title2"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wol_tv_title2" />
+
+        <View
+            android:id="@+id/fg_home_wol_view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/color_f4f6f8"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wol_tv_title3" />
+
+        <TextView
+            android:id="@+id/fg_home_wol_tv_select_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="17dp"
+            android:text="@string/HomeFragmentWOL_txt_select_location"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wol_view_divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fg_home_wol_rv_location_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp"
+            setRvList="@{viewModel.defaultLocationList}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wol_tv_select_location"
+            tools:listitem="@layout/item_rv_default_location" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

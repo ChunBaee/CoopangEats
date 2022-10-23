@@ -32,4 +32,8 @@ class MainViewModel (application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun getDefaultLocationList() : MutableList<String> {
+        return repo.getDefaultLocation()
+    }
+
 }
