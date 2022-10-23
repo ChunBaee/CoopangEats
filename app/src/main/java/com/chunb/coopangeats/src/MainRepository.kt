@@ -1,25 +1,20 @@
 package com.chunb.coopangeats.src
 
 import android.content.Context
-import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
-import android.util.Log
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import com.chunb.coopangeats.R
+import com.chunb.coopangeats.src.home.homewl.model.HomeEventData
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.Task
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import java.util.*
 
 class MainRepository(context: Context) {
     private val mContext = context
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
+    /** HomeWOL */
     fun returnUserLocation(): Task<Location> {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(mContext)
         return fusedLocationClient.lastLocation
@@ -61,6 +56,17 @@ class MainRepository(context: Context) {
             "서울시 도봉구",
             "서울시 노원구"
         )
+    }
+
+
+    /** HomeWL */
+
+    fun returnEventBanner() : MutableList<HomeEventData> {
+        return mutableListOf(HomeEventData(1, mContext.getDrawable(R.drawable.img_home_wl_event_1)),
+            HomeEventData(2, mContext.getDrawable(R.drawable.img_home_wl_event_2)),
+            HomeEventData(3, mContext.getDrawable(R.drawable.img_home_wl_event_3)),
+            HomeEventData(4, mContext.getDrawable(R.drawable.img_home_wl_event_4)),
+            HomeEventData(5, mContext.getDrawable(R.drawable.img_home_wl_event_5)))
     }
 
 }

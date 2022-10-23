@@ -4,6 +4,7 @@ import android.app.Application
 import android.location.Location
 import android.util.Log
 import androidx.lifecycle.*
+import com.chunb.coopangeats.src.home.homewl.model.HomeEventData
 import com.google.android.gms.tasks.Task
 import kotlinx.coroutines.async
 
@@ -19,6 +20,7 @@ class MainViewModel (application: Application) : AndroidViewModel(application) {
     private val _userLocationName = MutableLiveData<String>("주소 입력하기")
     val userLocationName : LiveData<String> = _userLocationName
 
+    /** HomeWOL */
 
     fun getUserLocation() {
         //유저 현재 좌표 가져오기
@@ -34,6 +36,11 @@ class MainViewModel (application: Application) : AndroidViewModel(application) {
 
     fun getDefaultLocationList() : MutableList<String> {
         return repo.getDefaultLocation()
+    }
+
+    /** HomeWL */
+    fun getHomeEventBanner() : MutableList<HomeEventData> {
+        return repo.returnEventBanner()
     }
 
 }

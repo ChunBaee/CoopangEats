@@ -20,6 +20,7 @@ import androidx.fragment.app.activityViewModels
 import com.chunb.coopangeats.R
 import com.chunb.coopangeats.databinding.FragmentHomeBinding
 import com.chunb.coopangeats.src.MainViewModel
+import com.chunb.coopangeats.src.home.homewl.HomeFragmentWL
 import com.chunb.coopangeats.src.home.homewol.HomeFragmentWOL
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -54,6 +55,7 @@ class HomeFragment : Fragment() {
             requestPermissions.launch(PERM_LIST)
         } else {
             viewModel.getUserLocation()
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fg_home_layout_container, HomeFragmentWL()).commit()
         }
     }
 
@@ -74,6 +76,7 @@ class HomeFragment : Fragment() {
     ) {
         if (checkHasPermission()) {
             viewModel.getUserLocation()
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fg_home_layout_container, HomeFragmentWL()).commit()
         } else {
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fg_home_layout_container, HomeFragmentWOL()).commit()
             showPermissionDialog()

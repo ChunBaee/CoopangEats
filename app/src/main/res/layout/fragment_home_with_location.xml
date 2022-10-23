@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.chunb.coopangeats.src.home.homewl.HomeFragmentWL" />
+
+        <variable
+            name="viewModel"
+            type="com.chunb.coopangeats.src.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/fg_home_wl_vp_event_banner"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            setVPList="@{viewModel.homeEventBanner}"
+            setIndicator="@{fragment.VPCheckTextView()}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:background="@drawable/bg_000000_40_20"
+            app:layout_constraintEnd_toEndOf="@id/fg_home_wl_vp_event_banner"
+            app:layout_constraintTop_toTopOf="@id/fg_home_wl_vp_event_banner">
+
+            <TextView
+                android:id="@+id/fg_home_wl_tv_event_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+                android:text="1/21"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_000000_60_20"
+            app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_vp_event_banner"
+            app:layout_constraintEnd_toEndOf="@id/fg_home_wl_vp_event_banner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/HomeFragmentWL_see_all_events"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fg_home_wl_rv_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="15dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wl_vp_event_banner" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

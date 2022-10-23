@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_000000_50_20.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/bg_000000_80_20.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/item_bg_tab_indicator.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/main_bottom_color.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/selector_main_bottom_home.xml" value="0.184" />
@@ -13,9 +15,11 @@
         <entry key="app/src/main/res/layout/activity_before_start.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2916666666666667" />
+        <entry key="app/src/main/res/layout/fragment_home_with_location.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/fragment_home_without_location.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/item_rv_default_location.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/item_vp_before_start.xml" value="0.2916666666666667" />
+        <entry key="app/src/main/res/layout/item_vp_home_wl_event_banner.xml" value="0.2078125" />
         <entry key="app/src/main/res/menu/menu_main_bottom.xml" value="0.3958333333333333" />
       </map>
     </option>

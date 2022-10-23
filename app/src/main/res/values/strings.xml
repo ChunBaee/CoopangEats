@@ -22,4 +22,8 @@
     <string name="HomeFragmentWOL_header_txt_3">내 주변 상점들을 빠르게 살펴볼 수 있습니다.</string>
     <string name="HomeFragmentWOL_txt_select_location">주문 지역 선택</string>
 
+    <!-- HomeFragmentWithLocation -->
+    <string name="HomeFragmentWL_see_all_events">이벤트 전체보기</string>
+    <string name="HomeFragmentWL_event_counts"> %d / %d</string>
+
 </resources>
