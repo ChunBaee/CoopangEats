@@ -10,10 +10,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -22,10 +20,6 @@ import com.chunb.coopangeats.databinding.FragmentHomeBinding
 import com.chunb.coopangeats.src.MainViewModel
 import com.chunb.coopangeats.src.home.homewl.HomeFragmentWL
 import com.chunb.coopangeats.src.home.homewol.HomeFragmentWOL
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -96,5 +90,4 @@ class HomeFragment : Fragment() {
         }
         builder.create().show()
     }
-
 }

@@ -25,5 +25,9 @@
     <!-- HomeFragmentWithLocation -->
     <string name="HomeFragmentWL_see_all_events">이벤트 전체보기</string>
     <string name="HomeFragmentWL_event_counts"> %d / %d</string>
+    <string name="HomeFragmentWL_authed_store">인증맛집</string>
+    <string name="HomeFragmentWL_storeList_title">골라먹는 맛집</string>
+    <string name="HomeFragmentWL_Cheetha_delivery">치타배달</string>
+    <string name="HomeFragmentWL_Blue_Ribbon">블루리본</string>
 
 </resources>
