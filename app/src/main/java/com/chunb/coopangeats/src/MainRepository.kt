@@ -4,6 +4,7 @@ import android.content.Context
 import android.location.Geocoder
 import android.location.Location
 import com.chunb.coopangeats.R
+import com.chunb.coopangeats.src.home.homewl.model.HomeCategoryData
 import com.chunb.coopangeats.src.home.homewl.model.HomeEventData
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -62,11 +63,25 @@ class MainRepository(context: Context) {
     /** HomeWL */
 
     fun returnEventBanner() : MutableList<HomeEventData> {
-        return mutableListOf(HomeEventData(1, mContext.getDrawable(R.drawable.img_home_wl_event_1)),
-            HomeEventData(2, mContext.getDrawable(R.drawable.img_home_wl_event_2)),
-            HomeEventData(3, mContext.getDrawable(R.drawable.img_home_wl_event_3)),
-            HomeEventData(4, mContext.getDrawable(R.drawable.img_home_wl_event_4)),
-            HomeEventData(5, mContext.getDrawable(R.drawable.img_home_wl_event_5)))
+        return mutableListOf(HomeEventData(1, mContext.getDrawable(R.drawable.bg_home_wl_event_1)),
+            HomeEventData(2, mContext.getDrawable(R.drawable.bg_home_wl_event_2)),
+            HomeEventData(3, mContext.getDrawable(R.drawable.bg_home_wl_event_3)),
+            HomeEventData(4, mContext.getDrawable(R.drawable.bg_home_wl_event_4)),
+            HomeEventData(5, mContext.getDrawable(R.drawable.bg_home_wl_event_5)))
+    }
+
+    fun returnCategoryImages() : MutableList<HomeCategoryData> {
+        return mutableListOf(
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_delivery), "포장"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_hansik), "한식"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_chicken), "치킨"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_bunsik), "분식"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_curtlet), "돈까스"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_jokbo), "족발/보쌈"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_zzimtang), "찜/탕"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_guie), "구이"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_pizza), "피자"),
+            HomeCategoryData(mContext.getDrawable(R.drawable.ic_home_category_jungsik), "중식"))
     }
 
 }

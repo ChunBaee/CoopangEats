@@ -18,11 +18,12 @@
         <entry key="app/src/main/res/layout/fragment_home_with_location.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/fragment_home_without_location.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/item_rv_default_location.xml" value="0.2916666666666667" />
+        <entry key="app/src/main/res/layout/item_rv_home_wl_categories.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/item_vp_before_start.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/item_vp_home_wl_event_banner.xml" value="0.2078125" />
         <entry key="app/src/main/res/menu/menu_main_bottom.xml" value="0.3958333333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

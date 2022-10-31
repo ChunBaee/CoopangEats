@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="fragment"
             type="com.chunb.coopangeats.src.home.homewl.HomeFragmentWL" />
@@ -20,10 +20,10 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/fg_home_wl_vp_event_banner"
+            setIndicator="@{fragment.VPCheckTextView()}"
+            setVPList="@{viewModel.homeEventBanner}"
             android:layout_width="match_parent"
             android:layout_height="175dp"
-            setVPList="@{viewModel.homeEventBanner}"
-            setIndicator="@{fragment.VPCheckTextView()}"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,13 +77,31 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fg_home_wl_rv_categories"
+            setRv="@{viewModel.homeCategories}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="15dp"
+            android:layout_marginTop="5dp"
             android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/fg_home_wl_vp_event_banner" />
+
+        <View
+            android:id="@+id/fg_home_wl_iv_center_banner"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_f4f6f8"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wl_rv_categories" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:src="@drawable/bg_home_wl_center_event_banner"
+            app:layout_constraintTop_toBottomOf="@id/fg_home_wl_iv_center_banner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

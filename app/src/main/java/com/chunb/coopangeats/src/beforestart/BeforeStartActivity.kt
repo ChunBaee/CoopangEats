@@ -26,7 +26,6 @@ class BeforeStartActivity : AppCompatActivity() {
         binding.activity = this
 
         removeStatusBar()
-        //setTabWithVP()
     }
 
     /** 상태바 투명하게 & 뷰가 상태바를 덮게 */

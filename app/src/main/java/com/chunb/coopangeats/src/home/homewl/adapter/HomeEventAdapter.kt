@@ -20,7 +20,7 @@ class HomeEventAdapter(itemList : MutableList<HomeEventData>) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: HomeEventViewHolder, position: Int) {
-        holder.bind(mItemList[position % 5])
+        holder.bind(mItemList[position % mItemList.size])
     }
 
     override fun getItemCount(): Int = Int.MAX_VALUE

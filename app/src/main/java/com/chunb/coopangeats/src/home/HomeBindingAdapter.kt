@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.chunb.coopangeats.R
+import com.chunb.coopangeats.src.home.homewl.adapter.HomeCategoryAdapter
 import com.chunb.coopangeats.src.home.homewl.adapter.HomeEventAdapter
+import com.chunb.coopangeats.src.home.homewl.model.HomeCategoryData
 import com.chunb.coopangeats.src.home.homewl.model.HomeEventData
 import com.chunb.coopangeats.src.home.homewol.adapter.HomeDefaultAdapter
 
@@ -38,5 +40,12 @@ object HomeBindingAdapter {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
             }
         })
+    }
+
+    @BindingAdapter("setRv")
+    @JvmStatic
+    fun setRv(view : RecyclerView, list : MutableList<HomeCategoryData>) {
+        val adapter = HomeCategoryAdapter(list)
+        view.adapter = adapter
     }
 }

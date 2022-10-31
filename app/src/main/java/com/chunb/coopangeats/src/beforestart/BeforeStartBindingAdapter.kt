@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.chunb.coopangeats.src.beforestart.adapter.BeforeStartAdapterVP
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -15,6 +16,12 @@ object BeforeStartBindingAdapter {
     @JvmStatic
     fun setImageFromResource(view: ImageView, resource: Drawable) {
         view.background = resource
+    }
+
+    @BindingAdapter("setImageSrcFromResource")
+    @JvmStatic
+    fun setImageSrcFromResource (view : ImageView, resource: Drawable) {
+        Glide.with(view.context).load(resource).into(view)
     }
 
     /*
