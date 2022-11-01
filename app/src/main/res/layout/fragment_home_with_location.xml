@@ -18,85 +18,88 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/fg_home_wl_layout_toolbanner"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="@color/white"
-            android:elevation="1dp"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/fg_home_wl_tv_toolbanner_authed_store"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/HomeFragmentWL_authed_store"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginStart="15dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/fg_home_wl_iv_toolbanner_cheetha_delivery"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_cheeta_delivery"
-                android:layout_marginStart="15dp"
-                app:layout_constraintTop_toTopOf="@id/fg_home_wl_tv_toolbanner_authed_store"
-                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_tv_toolbanner_authed_store"
-                app:layout_constraintStart_toEndOf="@id/fg_home_wl_tv_toolbanner_authed_store" />
-
-            <TextView
-                android:id="@+id/fg_home_wl_tv_toolbanner_cheetha_delivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/HomeFragmentWL_Cheetha_delivery"
-                android:textSize="13sp"
-                android:textColor="@color/color_5e686f"
-                android:layout_marginStart="5dp"
-                app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
-                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
-                app:layout_constraintStart_toEndOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery" />
-
-            <ImageView
-                android:id="@+id/fg_home_wl_iv_toolbanner_blue_ribbon"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_blue_ribbon"
-                android:layout_marginStart="10dp"
-                app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
-                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
-                app:layout_constraintStart_toEndOf="@id/fg_home_wl_tv_toolbanner_cheetha_delivery" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/HomeFragmentWL_Blue_Ribbon"
-                android:textColor="@color/color_5e686f"
-                android:textSize="13sp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_toolbanner_blue_ribbon"
-                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_toolbanner_blue_ribbon"
-                app:layout_constraintStart_toEndOf="@id/fg_home_wl_iv_toolbanner_blue_ribbon" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/fg_home_wl_layout_scroll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            stickyStandard="@{fragment.StickyStandard()}"
+            stickyview="@{fragment.StickyView()}"
             targetView="@{fragment.ToolbannerTargetView()}"
             toolbanner="@{fragment.ToolbannerView()}"
-            stickyview="@{fragment.StickyView()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fg_home_wl_layout_toolbanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/white"
+                    android:elevation="1dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/fg_home_wl_tv_toolbanner_authed_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/HomeFragmentWL_authed_store"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/fg_home_wl_iv_toolbanner_cheetha_delivery"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/ic_cheeta_delivery"
+                        app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_tv_toolbanner_authed_store"
+                        app:layout_constraintStart_toEndOf="@id/fg_home_wl_tv_toolbanner_authed_store"
+                        app:layout_constraintTop_toTopOf="@id/fg_home_wl_tv_toolbanner_authed_store" />
+
+                    <TextView
+                        android:id="@+id/fg_home_wl_tv_toolbanner_cheetha_delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/HomeFragmentWL_Cheetha_delivery"
+                        android:textColor="@color/color_5e686f"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
+                        app:layout_constraintStart_toEndOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
+                        app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery" />
+
+                    <ImageView
+                        android:id="@+id/fg_home_wl_iv_toolbanner_blue_ribbon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/ic_blue_ribbon"
+                        app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery"
+                        app:layout_constraintStart_toEndOf="@id/fg_home_wl_tv_toolbanner_cheetha_delivery"
+                        app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_toolbanner_cheetha_delivery" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/HomeFragmentWL_Blue_Ribbon"
+                        android:textColor="@color/color_5e686f"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_toolbanner_blue_ribbon"
+                        app:layout_constraintStart_toEndOf="@id/fg_home_wl_iv_toolbanner_blue_ribbon"
+                        app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_toolbanner_blue_ribbon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/fg_home_wl_vp_event_banner"
@@ -198,11 +201,126 @@
                     app:layout_constraintTop_toBottomOf="@id/fg_home_wl_iv_center_banner" />
 
                 <View
-                    android:id="@+id/fg_home_wl_layout_sticky"
+                    android:id="@+id/fg_home_wl_layout_sticky_standard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    app:layout_constraintTop_toTopOf="@id/fg_home_wl_layout_sticky_store" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fg_home_wl_layout_sticky_store"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:background="@color/black"
-                    app:layout_constraintTop_toBottomOf="@id/fg_home_wl_tv_storeList_title"/>
+                    android:layout_marginStart="15dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/fg_home_wl_tv_storeList_title">
+
+                    <LinearLayout
+                        android:id="@+id/fg_home_wl_inner_layout_changeable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/fg_home_wl_inner_layout_authed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:onClick="@{fragment::onStickyAuthStoreClick}">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_cheetha_and_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/HomeFragmentWL_authed_store"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fg_home_wl_inner_layout_cheetha_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/fg_home_wl_iv_inner_sticky_cheetha_delivery"
+                                android:layout_width="27dp"
+                                android:layout_height="27dp"
+                                android:src="@drawable/ic_cheeta_delivery"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fg_home_wl_tv_inner_sticky_cheetha_delivery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/HomeFragmentWL_Cheetha_delivery"
+                                android:textColor="@color/color_5e686f"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_inner_sticky_cheetha_delivery"
+                                app:layout_constraintStart_toEndOf="@id/fg_home_wl_iv_inner_sticky_cheetha_delivery"
+                                app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_inner_sticky_cheetha_delivery" />
+
+                            <ImageView
+                                android:id="@+id/fg_home_wl_iv_inner_sticky_blue_ribbon"
+                                android:layout_width="27dp"
+                                android:layout_height="27dp"
+                                android:layout_marginStart="5dp"
+                                android:src="@drawable/ic_blue_ribbon"
+                                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_tv_inner_sticky_cheetha_delivery"
+                                app:layout_constraintStart_toEndOf="@id/fg_home_wl_tv_inner_sticky_cheetha_delivery"
+                                app:layout_constraintTop_toTopOf="@id/fg_home_wl_tv_inner_sticky_cheetha_delivery" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/HomeFragmentWL_Blue_Ribbon"
+                                android:textColor="@color/color_5e686f"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_iv_inner_sticky_blue_ribbon"
+                                app:layout_constraintStart_toEndOf="@id/fg_home_wl_iv_inner_sticky_blue_ribbon"
+                                app:layout_constraintTop_toTopOf="@id/fg_home_wl_iv_inner_sticky_blue_ribbon" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chiptest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="rkskek"
+                            app:chipIcon="@drawable/ic_launcher_background"
+                            android:layoutDirection="rtl"
+                             />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/color_ebf0f1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginVertical="3dp"
+                        app:layout_constraintTop_toTopOf="@id/fg_home_wl_inner_layout_changeable"
+                        app:layout_constraintBottom_toBottomOf="@id/fg_home_wl_inner_layout_changeable"
+                        app:layout_constraintStart_toEndOf="@id/fg_home_wl_inner_layout_changeable" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <View
